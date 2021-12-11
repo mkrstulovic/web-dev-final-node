@@ -5,11 +5,6 @@ module.exports = (app) => {
         dao.findAllUsers()
             .then(users => res.json(users));
 
-    const createUser = (req, res) => {
-        dao.createModerator(req.body)
-            .then((insertedUser) => res.json(insertedUser));
-    }
-
     const updateBanned = (req, res) => {
         dao.updateBanned(req.params.id, req.body)
             .then((status) => res.send(status));
@@ -65,6 +60,5 @@ module.exports = (app) => {
     app.put('/api/users/:id', updateProfile);
     app.put('/api/users/:id/banned', updateBanned);
     app.put('/api/users/:id/report', updateReport);
-    app.post('/api/users', createUser);
     app.get('/api/users', findAllUsers);
 };

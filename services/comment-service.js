@@ -6,7 +6,14 @@ module.exports = (app) => {
             .then(comments => res.json(comments));
 
     const createComment = (req, res) => {
-        dao.createComment(req.body)
+        const newComment = {
+            "username": req.body[0],
+            "cardId": req.body[1],
+            "body": req.body[2],
+            "flags": 0,
+            "flaggedBy": []
+        }
+        dao.createComment(newComment)
             .then((insertedComment) => res.json(insertedComment));
     }
 

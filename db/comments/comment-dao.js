@@ -9,8 +9,8 @@ const flagComment = (id, body) => {
         {$set: {flags: body[0], flaggedBy: body[1]}});
 };
 
-const createComment = async(comment) => {
-    await model.create(comment);
+const createComment = async(newComment) => {
+    await model.create(newComment);
     return model.find();
 };
 
