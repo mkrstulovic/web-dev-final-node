@@ -1,4 +1,4 @@
-const dao = require('../comments/comment-dao');
+const dao = require('../db/comments/comment-dao');
 
 module.exports = (app) => {
     const findAllComments = (req, res) =>

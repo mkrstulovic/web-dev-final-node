@@ -1,4 +1,4 @@
-const dao = require('../moderators/moderator-dao');
+const dao = require('../db/moderators/moderator-dao');
 
 module.exports = (app) => {
     const findAllModerators = (req, res) =>

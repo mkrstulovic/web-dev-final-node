@@ -22,11 +22,13 @@ const updateBanned = (id, body) => {
 
 const createUser = async(user) => {
     await model.create(user);
-    return model.find();
+    return model.findOne({username: user.username});
 };
 
 const updateProfile = (id, body) => {
-    return model.updateOne({_id: id},
+    console.log(id);
+    console.log(body);
+    return model.updateOne({username: id},
         {$set: {bio: body[0], favoriteColors: body[1], profPic: body[2]}});
 };
 

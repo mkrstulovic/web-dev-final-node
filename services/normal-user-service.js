@@ -1,4 +1,4 @@
-const dao = require('../users/user-dao');
+const dao = require('../db/users/user-dao');
 
 module.exports = (app) => {
     const findAllUsers = (req, res) =>
@@ -39,6 +39,7 @@ module.exports = (app) => {
                     res.sendStatus(404);
                     return;
                 }
+
                 dao.createUser(req.body)
                     .then(user => {
                         req.session['profile'] = user;
