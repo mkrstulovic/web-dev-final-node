@@ -9,8 +9,8 @@ const findModByUsername = ({username}) =>
     model.findOne({username});
 
 const updateBanned = (id, body) => {
-    return model.updateOne({_id: id},
-        {$push: {banned: body}});
+    return model.updateOne({username: id},
+        {$push: {banned: body[0]}});
 };
 
 const createModerator = async(moderator) => {

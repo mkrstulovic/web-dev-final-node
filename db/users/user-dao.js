@@ -16,8 +16,8 @@ const updateReport = (id, body) => {
 };
 
 const updateBanned = (id, body) => {
-    return model.updateOne({_id: id},
-        {$set: {isBanned: body}});
+    return model.updateOne({username: id},
+        {$set: {isBanned: body[0]}});
 }
 
 const createUser = async(user) => {

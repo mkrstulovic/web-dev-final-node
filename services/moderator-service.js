@@ -7,7 +7,7 @@ module.exports = (app) => {
 
     const createModerator = (req, res) => {
         const newModerator = {
-            "username": req.body,
+            "username": req.body[0],
             "banned": []
         }
         dao.createModerator(newModerator)
