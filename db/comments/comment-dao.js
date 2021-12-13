@@ -1,7 +1,7 @@
 const model = require('./comment-model');
 
 const findAllComments = () => {
-    return model.find();
+    return model.find().sort({createdAt: -1});
 };
 
 const flagComment = (id, body) => {

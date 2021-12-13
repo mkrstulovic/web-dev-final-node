@@ -11,8 +11,8 @@ const findByUsername = ({username}) =>
     model.findOne({username});
 
 const updateReport = (id, body) => {
-    return model.updateOne({_id: id},
-        {$set: {flags: body[0], reportedBy: body[1]}});
+    return model.updateOne({username: id},
+        {$set: {reports: body[0], reportedBy: body[1]}});
 };
 
 const updateBanned = (id, body) => {
@@ -26,8 +26,6 @@ const createUser = async(user) => {
 };
 
 const updateProfile = (id, body) => {
-    console.log(id);
-    console.log(body);
     return model.updateOne({username: id},
         {$set: {bio: body[0], favoriteColors: body[1], profPic: body[2]}});
 };

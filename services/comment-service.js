@@ -29,6 +29,6 @@ module.exports = (app) => {
 
     app.put('/api/comments/:id/flags', flagComment);
     app.delete('/api/comments/:id', deleteComment);
-    app.post('/api/comments', createComment);
+    app.post('/api/comments/create', createComment);
     app.get('/api/comments', findAllComments);
 };
